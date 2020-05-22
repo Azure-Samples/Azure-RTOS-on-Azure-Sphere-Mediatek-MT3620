@@ -14,7 +14,7 @@ Documentation for this library can be found at: http://docs.microsoft.com/azure/
 
 The main components of Azure RTOS are each provided in their own repository, but there are dependencies between them--shown in the following graph--that are important to understand when setting up your builds.
 
-![dependency graph](docs/deps.png)
+![dependency graph](docs/image/deps.png)
 
 ## Security
 
