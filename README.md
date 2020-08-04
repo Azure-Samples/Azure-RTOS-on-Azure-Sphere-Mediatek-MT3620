@@ -18,7 +18,7 @@ This sample app for an MT3620 real-time core running Azure RTOS that creates sev
 To use this sample, clone the repository locally if you haven't already done so:
 
 ```bash
-git clone https://github.com/Azure-Samples/Azure-RTOS-on-Azure-Sphere-Mediatek-MT3620
+git clone --recursive https://github.com/Azure-Samples/Azure-RTOS-on-Azure-Sphere-Mediatek-MT3620
 ```
 
 ## Contents
