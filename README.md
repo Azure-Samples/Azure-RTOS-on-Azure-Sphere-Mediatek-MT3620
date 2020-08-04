@@ -72,13 +72,23 @@ azsphere device recover
 
 To prepare your hardware to display output from the sample:
 
+1. Attach the USB-to-serial adapter to your PC.
+
+For Seeed RDB
+
 1. Connect GND on the USB-to-serial adapter to GND on your dev kit. On MT3620 RDB hardware, GND is Header 2, pin 2.
 
 1. Connect RX on the USB-to-serial adapter to TXD0 on your dev kit. On MT3620 RDB hardware, TXD0 is Header 2, pin 3.
 
-1. Attach the USB-to-serial adapter to your PC.
-
 ![Pinout](./docs/image/mt3620-rdb-headers.png)
+
+For Avnet Azure Sphere Starter Kit
+
+1. Connect GND on the USB-to-serial adapter to GND on your dev kit. On Avnet Azure Sphere Starter Kit hardware, GND is Click Socket #1, Header 2, pin 8.
+
+1. Connect RX on the USB-to-serial adapter to TXD0 on your dev kit. On Avnet Azure Sphere Starter Kit hardware, TXD0 is Click Socket #1, Header 2, pin 4.
+
+![Pinout](./docs/image/avnet-mt3620-sk-IUS0.png)
 
 For Windows:
 
