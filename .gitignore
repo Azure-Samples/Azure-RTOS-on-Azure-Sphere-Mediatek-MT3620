@@ -4,3 +4,4 @@
 /install/
 /install-*/
 .vs
+/build/
