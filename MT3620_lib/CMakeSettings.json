@@ -3,7 +3,7 @@
     {
       "environment": "AzureSphere",
 
-      "AzureSphereTargetApiSet": "5+Beta2004"
+      "AzureSphereTargetApiSet": "6"
     }
   ],
   "configurations": [
@@ -11,9 +11,7 @@
       "name": "ARM-Debug",
       "generator": "Ninja",
       "configurationType": "Debug",
-      "inheritEnvironments": [
-        "AzureSphere"
-      ],
+      "inheritEnvironments": ["AzureSphere"],
       "buildRoot": "${projectDir}\\..\\out\\mt3620_lib\\${name}",
       "installRoot": "${projectDir}\\..\\install\\mt3620_lib\\${name}",
       "cmakeCommandArgs": "--no-warn-unused-cli",
@@ -38,9 +36,7 @@
       "name": "ARM-Release",
       "generator": "Ninja",
       "configurationType": "Release",
-      "inheritEnvironments": [
-        "AzureSphere"
-      ],
+      "inheritEnvironments": ["AzureSphere"],
       "buildRoot": "${projectDir}\\..\\out\\mt3620_lib\\${name}",
       "installRoot": "${projectDir}\\..\\install\\mt3620_lib\\${name}",
       "cmakeCommandArgs": "--no-warn-unused-cli",

@@ -8,7 +8,7 @@ project (demo_threadx C ASM)
 SET(CMAKE_ASM_FLAGS "-mcpu=cortex-m4")
 
 azsphere_configure_tools(TOOLS_REVISION "20.04")
-azsphere_configure_api(TARGET_API_SET "5+Beta2004")
+azsphere_configure_api(TARGET_API_SET "6")
 
 ADD_COMPILE_DEFINITIONS(OSAI_BARE_METAL)
 ADD_LINK_OPTIONS(-specs=nano.specs -specs=nosys.specs)
@@ -19,7 +19,7 @@ add_executable (${PROJECT_NAME}
     ./demo_threadx/rtcoremain.c
     ./demo_threadx/tx_initialize_low_level.S)
 
-add_subdirectory(mt3620_lib)
+add_subdirectory(MT3620_lib)
 
 set(THREADX_ARCH "cortex_m4")
 set(THREADX_TOOLCHAIN "gnu")

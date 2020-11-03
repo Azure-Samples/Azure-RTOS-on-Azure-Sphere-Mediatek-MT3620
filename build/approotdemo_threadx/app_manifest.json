@@ -1,0 +1,11 @@
+{
+  "SchemaVersion": 1,
+  "Name": "demo_threadx",
+  "ComponentId": "8bad3ffb-ba15-4b81-9acb-0cc5bf5cfa2d",
+  "EntryPoint": "/bin/app",
+  "CmdArgs": [],
+  "Capabilities": {
+    "Uart": [ "ISU0" ]
+  },
+  "ApplicationType": "RealTimeCapable"
+}
