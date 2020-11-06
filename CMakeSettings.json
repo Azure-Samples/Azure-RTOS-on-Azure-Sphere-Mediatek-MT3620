@@ -9,9 +9,7 @@
       "name": "ARM-Debug",
       "generator": "Ninja",
       "configurationType": "Debug",
-      "inheritEnvironments": [
-        "AzureSphere"
-      ],
+      "inheritEnvironments": ["AzureSphere"],
       "buildRoot": "${projectDir}\\out\\${name}",
       "installRoot": "${projectDir}\\install\\${name}",
       "cmakeToolchain": "${env.AzureSphereDefaultSDKDir}CMakeFiles\\AzureSphereRTCoreToolchain.cmake",
@@ -20,7 +18,7 @@
       "variables": [
         {
           "name": "AZURE_SPHERE_TARGET_API_SET",
-          "value": "latest-beta"
+          "value": "6"
         },
         {
           "name": "ARM_GNU_PATH",
@@ -32,9 +30,7 @@
       "name": "ARM-Release",
       "generator": "Ninja",
       "configurationType": "Release",
-      "inheritEnvironments": [
-        "AzureSphere"
-      ],
+      "inheritEnvironments": ["AzureSphere"],
       "buildRoot": "${projectDir}\\out\\${name}",
       "installRoot": "${projectDir}\\install\\${name}",
       "cmakeToolchain": "${env.AzureSphereDefaultSDKDir}CMakeFiles\\AzureSphereRTCoreToolchain.cmake",
@@ -43,7 +39,7 @@
       "variables": [
         {
           "name": "AZURE_SPHERE_TARGET_API_SET",
-          "value": "latest-beta"
+          "value": "6"
         },
         {
           "name": "ARM_GNU_PATH",
