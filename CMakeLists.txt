@@ -10,7 +10,7 @@ SET(CMAKE_ASM_FLAGS "-mcpu=cortex-m4")
 azsphere_configure_tools(TOOLS_REVISION "20.07")
 azsphere_configure_api(TARGET_API_SET "6")
 
-add_compile_definitions(OSAI_BARE_METAL)
+add_compile_definitions(OSAI_AZURE_RTOS)
 
 add_link_options(-specs=nano.specs -specs=nosys.specs)
 

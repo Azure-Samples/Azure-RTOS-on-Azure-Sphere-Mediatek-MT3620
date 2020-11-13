@@ -116,36 +116,6 @@ For Linux:
 
 ## Build and run the sample
 
-Please note the following steps are just temporary solution due to the MediaTek MT3620 M4 driver has some issues and limitations as for now (2011):
-
-1. Open `mt3620_m4_software/MT3620_M4_BSP/mt3620/src/nvic.c` to comment out the `OSAI_FREERTOS` symbol so that it will use the ThreadX `SysTick_Handler`:
-
-   ```diff
-   void SystmTick_Handler(void)
-   {
-      sys_tick_in_ms++;
-   +  // #ifdef OSAI_FREERTOS
-   -  #ifdef OSAI_FREERTOS
-      extern void SysTick_Handler(void);
-      SysTick_Handler();
-   +  // #endif
-   -  #endif
-   }
-   ```
-
-1. If you are build the sample under Ubuntu, you also need to modify `mt3620_m4_software/MT3620_M4_Driver/CMakeLists.txt` as CMake under Linux is case sensitive to the file name:
-
-   ```diff
-   ADD_LIBRARY(MT3620_M4_Driver
-               ../MT3620_M4_BSP/printf/printf.c
-               ./MHAL/src/mhal_osai.c
-               ...
-   +           ./MHAL/src/mhal_i2s.c ./HDL/src/hdl_i2s.c
-   -           ./MHAL/src/mhal_i2s.c ./HDL/src/hdl_i2S.c
-               ...
-               ./MHAL/src/mhal_mbox.c ./HDL/src/hdl_mbox.c)
-   ```
-
 See tutorial to learn how to build and deploy this sample: [Tutorial: Build a real-time capable application](https://docs.microsoft.com/azure-sphere/install/qs-real-time-application?tabs=windows&pivots=visual-studio)
 
 > Note: You need Azure Sphere SDK version >= 20.07 to build and run the sample.
