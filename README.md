@@ -1,10 +1,10 @@
 ---
 page_type: sample
 languages:
-- c
+  - c
 products:
-- azure-rtos
-- azure-sphere
+  - azure-rtos
+  - azure-sphere
 description: "This sample demonstrates how Azure Sphere and Azure RTOS are able to run together on MT3620 Development Kit."
 urlFragment: "azure-rtos-on-azure-sphere-mediatek-mt3620"
 ---
@@ -23,12 +23,12 @@ git clone --recursive https://github.com/Azure-Samples/Azure-RTOS-on-Azure-Spher
 
 ## Contents
 
-| File/folder       | Description                                |
-|-------------------|--------------------------------------------|
-| `demo_threadx`    | Sample source code.                        |
-| `tx`              | Azure RTOS ThreadX source code.            |
-| `MT3620_lib`      | MediaTek 3620 HAL.                         |
-| `README.md`       | This README file.                          |
+| File/folder          | Description                                 |
+| -------------------- | ------------------------------------------- |
+| `demo_threadx`       | Sample source code.                         |
+| `threadx`            | Azure RTOS ThreadX source code (submodule). |
+| `mt3620_m4_software` | MediaTek 3620 HAL (submodule).              |
+| `README.md`          | This README file.                           |
 
 ## Prerequisites
 
@@ -48,9 +48,9 @@ To prepare your device on Windows:
 
 1. Enter the following azsphere command:
 
-    ```cmd
-    azsphere device enable-development --enablertcoredebugging
-    ```
+   ```cmd
+   azsphere device enable-development --enablertcoredebugging
+   ```
 
 1. Close the window after the command completes because administrator privilege is no longer required. As a best practice, you should always use the lowest privilege that can accomplish a task.
 
@@ -58,9 +58,9 @@ To prepare your device on Linux:
 
 1. Enter the following azsphere command:
 
-    ```cmd
-    azsphere device enable-development --enablertcoredebugging
-    ```
+   ```cmd
+   azsphere device enable-development --enablertcoredebugging
+   ```
 
 You may need to update the OS by using if you have an older device.
 
@@ -99,30 +99,26 @@ For Windows:
 For Linux:
 
 1. Find out which port the serial device is connected to:
-    
-    ```bash
-    dmesg | grep ttyUSB
-    ```
 
-    The port should be named **ttyUSBn**, where n indicates the port number.
+   ```bash
+   dmesg | grep ttyUSB
+   ```
+
+   The port should be named **ttyUSBn**, where n indicates the port number.
 
 1. Set up a terminal program to monitor the port. For example, the following commands set up [Minicom](https://help.ubuntu.com/community/Minicom) to monitor port 5, but you can use any program you prefer:
 
-    ```bash
-    sudo apt install minicom
-    
-    sudo minicom -D /dev/ttyUSB5 -b 115200
-    ```
+   ```bash
+   sudo apt install minicom
+
+   sudo minicom -D /dev/ttyUSB5 -b 115200
+   ```
 
 ## Build and run the sample
 
-See the following Azure Sphere Quickstarts to learn how to build and deploy this sample:
+See tutorial to learn how to build and deploy this sample: [Tutorial: Build a real-time capable application](https://docs.microsoft.com/azure-sphere/install/qs-real-time-application?tabs=windows&pivots=visual-studio)
 
-You need Azure Sphere SDK version >= 20.04 to build and run the sample.
-  
--  [with Visual Studio](https://docs.microsoft.com/azure-sphere/install/qs-real-time-application)
--  [with VS Code on Windows or Linux](https://docs.microsoft.com/azure-sphere/install/qs-real-time-app-vscode)
--  [on the Windows or Linux command line](https://docs.microsoft.com/azure-sphere/install/qs-real-time-app-cli)
+> Note: You need Azure Sphere SDK version >= 20.07 to build and run the sample.
 
 ## Observe the output
 
@@ -132,13 +128,13 @@ The connected terminal emulator should display output from the `demo_threadx` pr
 
 ## References
 
-- [Set up your Windows PC for app development](https://docs.microsoft.com/en-ca/azure-sphere/install/development-environment-windows)
-- [Claim your device](https://docs.microsoft.com/en-ca/azure-sphere/install/claim-device)
-- [Update the OS on an early dev kit](https://docs.microsoft.com/en-ca/azure-sphere/resources/update-old-seeed-os)
+- [Install the SDK](https://docs.microsoft.com/azure-sphere/install/overview)
+- [Claim your device](https://docs.microsoft.com/azure-sphere/install/claim-device)
+- [Update the OS on an early dev kit](https://docs.microsoft.com/azure-sphere/resources/update-old-seeed-os)
 
 ## Contributing
 
-This project welcomes contributions and suggestions.  Most contributions require you to agree to a
+This project welcomes contributions and suggestions. Most contributions require you to agree to a
 Contributor License Agreement (CLA) declaring that you have the right to, and actually do, grant us
 the rights to use your contribution. For details, visit https://cla.opensource.microsoft.com.
 

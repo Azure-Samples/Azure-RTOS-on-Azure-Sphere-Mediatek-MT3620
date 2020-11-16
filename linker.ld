@@ -26,7 +26,6 @@ REGION_ALIAS("DATA_REGION", TCM);
 REGION_ALIAS("BSS_REGION", TCM);
 
 ENTRY(__isr_vector)
-
 SECTIONS
 {
     /* The exception vector's virtual address must be aligned to a power of two,
@@ -36,9 +35,15 @@ SECTIONS
        When the code is run from XIP flash, it must be loaded to virtual address
        0x10000000 and be aligned to a 32-byte offset within the ELF file. */
     .text : ALIGN(32) {
+        __vector_table_start__ = .;
         KEEP(*(.vector_table))
+        __vector_table_end__ = .;
         *(.text)
     } >CODE_REGION
+
+    .isr_vector_tcm : ALIGN(512) {
+        KEEP(*(.vector_table_tcm))
+    } >DATA_REGION
 
     .rodata : {
         *(.rodata)
@@ -49,11 +54,17 @@ SECTIONS
     } >DATA_REGION
 
     .bss : {
+        __bss_start__ = .;
         *(.bss)
+        __bss_end__ = .;
     } >BSS_REGION
 
-	  . = ALIGN(4);
-  	end = . ;
+	. = ALIGN(4);
+  	end = .;
+
+    .sysram : {
+        *(.sysram)
+    } >SYSRAM
 
     StackTop = ORIGIN(TCM) + LENGTH(TCM);
 }
