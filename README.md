@@ -44,12 +44,12 @@ To prepare your device on Windows:
 
 1. Right-click the Azure Sphere Developer Command Prompt shortcut and select **More>Run as administrator**.
 
-   The `--EnableRTCoreDebugging` parameter requires administrator privilege because it installs USB drivers for the debugger.
+   The [`--enable-rt-core-debugging`](https://docs.microsoft.com/azure-sphere/app-development/build-rt-app?tabs=windows%2Ccliv2beta&pivots=visual-studio#enable-development-and-debugging) parameter requires administrator privilege because it installs USB drivers for the debugger.
 
 1. Enter the following azsphere command:
 
    ```cmd
-   azsphere device enable-development --enablertcoredebugging
+   azsphere device enable-development --enable-rt-core-debugging
    ```
 
 1. Close the window after the command completes because administrator privilege is no longer required. As a best practice, you should always use the lowest privilege that can accomplish a task.
@@ -59,7 +59,7 @@ To prepare your device on Linux:
 1. Enter the following azsphere command:
 
    ```cmd
-   azsphere device enable-development --enablertcoredebugging
+   azsphere device enable-development --enable-rt-core-debugging
    ```
 
 You may need to update the OS by using if you have an older device.
